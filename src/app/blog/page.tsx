@@ -1,3 +1,10 @@
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Blog"
+}
+
+
 function BlogPage() {
     return (
         <h1>Blog Page</h1>
