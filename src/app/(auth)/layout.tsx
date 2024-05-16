@@ -1,5 +1,6 @@
 "use client"
 import Link from "next/link"
+import { useState } from "react"
 import { usePathname } from "next/navigation" //gets the current path
 //ACTIVE LINKS
 //highlights the link in usage
@@ -21,8 +22,13 @@ export default function AuthLayout({ children }: {
 
     const pathname = usePathname() //all react compoonents 
 
+    const [input, setInput] = useState('')
+
     return <div>
         <>
+            <div>
+                <input style={{ borderColor: 'blue', borderWidth: '2px' }} value={input} type="text" onChange={(e) => setInput(e.target.value)} />
+            </div>
             {navLinks.map((link) => {
                 const isActive = pathname.startsWith(link.href)
 
