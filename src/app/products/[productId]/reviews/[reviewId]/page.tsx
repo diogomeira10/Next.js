@@ -3,9 +3,9 @@ import { notFound } from "next/navigation";
 
 
 
-function getRandomInt(count: number) {
-    return Math.floor(Math.random() * count)
-}
+// function getRandomInt(count: number) {
+//     return Math.floor(Math.random() * count)
+// }
 
 function ReviewDetail({ params }: {
     params: {
@@ -14,11 +14,11 @@ function ReviewDetail({ params }: {
     }
 }) {
 
-    const randomNumber = getRandomInt(2)
+    // const randomNumber = getRandomInt(2)
 
-    if (randomNumber === 1) {
-        throw new Error('Error loading review')
-    }
+    // if (randomNumber === 1) {
+    //     throw new Error('Error loading review')
+    // }
 
     if (parseInt(params.reviewId) > 1000) {
         notFound()
