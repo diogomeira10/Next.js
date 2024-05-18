@@ -1,13 +1,32 @@
-export default function DashboardLayout({ children }:
+import Card from "@/components/card"
+
+export default function DashboardLayout({
+    children,
+    users,
+    revenue,
+    notifications
+}:
     {
-        children: React.ReactNode
+        children: React.ReactNode,
+        users: React.ReactNode,
+        revenue: React.ReactNode,
+        notifications: React.ReactNode
     }
 ) {
     return <>
-        <h1> This is the DashboardLayout Header ...</h1>
-        <div>
-            {children}
-        </div>
-        <h1>This is the DashBoardLayout Footer</h1>
+        <h1 style={{ textAlign: 'center' }}> This is the DashboardLayout Header  ....</h1>
+        <Card>
+            <div style={{ display: 'flex' }}>
+                <div style={{ display: 'flex', flexDirection: "column" }}>
+                    <div>{users}</div>
+                    <div>{revenue}</div>
+
+                </div>
+                <div style={{ display: "flex", flex: 1 }}>{notifications}</div>
+
+            </div>
+
+        </Card>
+        <h1 style={{ textAlign: 'center' }}>This is the DashBoardLayout Footer</h1>
     </>
 }
