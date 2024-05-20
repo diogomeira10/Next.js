@@ -1,3 +1,5 @@
+import React from 'react'
+
 const Card = ({ children }: { children: React.ReactNode }) => {
     const cardStyle = {
       padding: "100px",
