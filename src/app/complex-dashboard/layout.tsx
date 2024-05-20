@@ -4,16 +4,21 @@ export default function DashboardLayout({
     children,
     users,
     revenue,
-    notifications
+    notifications,
+    login
 }:
     {
         children: React.ReactNode,
         users: React.ReactNode,
         revenue: React.ReactNode,
-        notifications: React.ReactNode
+        notifications: React.ReactNode,
+        login: React.ReactNode
     }
 ) {
-    return <>
+
+    const isLoggedIn = true
+
+    return isLoggedIn ? <>
         <h1 style={{ textAlign: 'center' }}> This is the DashboardLayout Header  ....</h1>
         <Card>
             <div style={{ display: 'flex' }}>
@@ -28,5 +33,8 @@ export default function DashboardLayout({
 
         </Card>
         <h1 style={{ textAlign: 'center' }}>This is the DashBoardLayout Footer</h1>
-    </>
+    </> :
+        <div>
+            {login}
+        </div>
 }
