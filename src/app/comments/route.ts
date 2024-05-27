@@ -7,7 +7,7 @@ export async function GET() {
 export async function POST(request: Request) {
 
     const comment = await request.json()
-    
+
 
     const newComment = {
         id: comments.length + 1,
@@ -25,3 +25,5 @@ export async function POST(request: Request) {
         }
     )
 }
+
+
