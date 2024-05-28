@@ -1,11 +1,17 @@
+import { redirect } from "next/navigation"
 import { comments } from "../data"
 
-// export async function GET(request: Request, { params }: { params: { id: string } }) {
+export async function GET(request: Request, { params }: { params: { id: string } }) {
 
-//     const comment = comments.find(comment => comment.id === parseInt(params.id))
+    const comment = comments.find(comment => comment.id === parseInt(params.id))
 
-//     return Response.json(comment)
-// }
+    if (comment) {
+        return Response.json(comment)
+    } else {
+        redirect('/comments')
+    }
+
+}
 
 export async function PATCH(request: Request, { params }:
     { params: { id: string } }
